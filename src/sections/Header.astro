@@ -1,0 +1,83 @@
+<header class="bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="bg-linear-to-r from-orange-500 to-red-600 p-2 rounded-lg">
+                    <img src="../../logo.png" alt="Logotipo gym" class="w-12">
+                </div>
+                <span class="text-2xl font-bold text-white">FitPro</span>
+            </div>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="#inicio" class="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Inicio
+                </a>
+                <a href="#ejercicios" class="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Ejercicios
+                </a>
+                <a href="#alimentacion" class="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Alimentación
+                </a>
+                <a href="#calendario" class="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Calendario
+                </a>
+                <a href="#progreso" class="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Progreso
+                </a>
+                <a href="#perfil" class="ml-2 px-4 py-2 bg-linear-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-200 font-medium shadow-lg">
+                    Perfil
+                </a>
+            </nav>
+
+            <!-- Botón Menú Mobile -->
+            <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú Mobile -->
+        <nav id="mobile-menu" class="md:hidden hidden pb-4">
+            <div class="flex flex-col space-y-2">
+                <a href="#inicio" class="px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Inicio
+                </a>
+                <a href="#ejercicios" class="px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Ejercicios
+                </a>
+                <a href="#alimentacion" class="px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Alimentación
+                </a>
+                <a href="#calendario" class="px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Calendario
+                </a>
+                <a href="#progreso" class="px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-all duration-200 font-medium">
+                    Progreso
+                </a>
+                <a href="#perfil" class="px-4 py-3 bg-linear-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-200 font-medium text-center shadow-lg">
+                    Perfil
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuToggle?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        
+        // Cambiar icono del menú
+        if (mobileMenu?.classList.contains('hidden')) {
+            menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        } else {
+            menuIcon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        }
+    });
+</script>
